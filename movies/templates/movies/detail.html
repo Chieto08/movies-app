@@ -16,15 +16,11 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-        <h1>Movies</h1>
-        <ul>
-        {% for movie in movies %}
-            <li><a href={{movie.id}}>{{movie.title}}</a></li>
-        {% endfor %}
-        </ul>
+        <p>{{movie.title}}</p>
+        <p>{{movie.year}}</p>
 
-        <a href="/add">Add a movie</a>
+        <a href="/movies/delete/{{movie.id}}">Delete</a>
+        
         <script src="" async defer></script>
     </body>
 </html>

@@ -16,15 +16,15 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-        <h1>Movies</h1>
-        <ul>
-        {% for movie in movies %}
-            <li><a href={{movie.id}}>{{movie.title}}</a></li>
-        {% endfor %}
-        </ul>
 
-        <a href="/add">Add a movie</a>
+        <form action='/movies/add/' method='POST'>
+            {% csrf_token %}
+            <input type="text" name='title' id='title', placeholder='Movie title'>
+            <input type="text" name='year' id='year', placeholder='Movie year'>
+            <input type='submit' value='Add'>
+
+        </form>
+        
         <script src="" async defer></script>
     </body>
 </html>
